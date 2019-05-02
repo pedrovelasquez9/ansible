@@ -1,0 +1,15 @@
+- hosts: otros
+  become: true
+  tasks:
+
+  - name: Instalemos el EPEL release para nginx
+    package: name=epel-release state=present
+    notify: Start Nginx
+
+  - name: Instalemos nginx web server
+    package: name=nginx state=installed update_cache=true  
+ 
+  handlers:
+ 
+    - name: Start Nginx
+      service: name=nginx state=started

@@ -1,0 +1,7 @@
+- hosts: paco
+  become: true
+  vars:
+    paquete: vim
+  tasks:
+    - name: Instalacion de Paquete
+      yum: name={{ paquete }} state=latest
