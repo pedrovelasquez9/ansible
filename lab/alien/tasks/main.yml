@@ -1,0 +1,4 @@
+- name: Put the spoiler text in the tmp directory on the remote server.
+  copy:
+    content="{{spoiler_text}}"
+    dest=/tmp/spoiler_text.txt

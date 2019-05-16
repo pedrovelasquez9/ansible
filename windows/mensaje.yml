@@ -1,0 +1,33 @@
+---
+- name: Enviar un mensaje al usuario
+  hosts: windows
+  tasks:
+    - name: mensaje
+      win_msg:
+        display_seconds: 30
+        msg: Este equipo se autodestruirá en {{sec}} segundos
+
+    - name: toast de windows
+      win_toast:
+        expire: 60
+        title: Hola mundo
+        msg: Voy a actualizarme cuando menos lo esperes
+    
+    - name: Ver quién soy
+      win_whoami:
+      register: result
+    - name: imprimir
+      debug: 
+        msg: "{{ result }}"
+
+    - name: Crear backup con robocopy
+      win_robocopy:
+        src: C:\Users\vagrant\Downloads
+        dest: C:\Users\vagrant\Backup
+        recurse: yes
+    
+    - name: Path variables
+      win_path:
+        elements:
+        - 'C:\nodejs'
+        state: present

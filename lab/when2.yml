@@ -1,0 +1,11 @@
+- hosts: all
+  tasks:
+  - stat:
+      path: /home/vagrant/prueba3.txt mode=0777
+    register: result
+
+  - file:
+      path: /home/vagrant/prueba3.txt
+      state: touch
+      mode: 0777
+    when: result.stat.exists == false

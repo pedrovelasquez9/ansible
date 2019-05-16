@@ -1,1 +1,1 @@
-{"name":"centos/7","version":"1710.01","provider":"virtualbox","directory":"boxes/centos-VAGRANTSLASH-7/1710.01/virtualbox"}
+{"name":"ubuntu/xenial64","version":"20190317.0.0","provider":"virtualbox","directory":"boxes/ubuntu-VAGRANTSLASH-xenial64/20190317.0.0/virtualbox"}

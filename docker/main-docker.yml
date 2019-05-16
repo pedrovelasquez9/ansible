@@ -1,0 +1,7 @@
+- hosts: hugo
+  become: true
+  tasks:
+    - name: Creo el contenedor
+      docker_container:
+        name: apache
+        image: httpd

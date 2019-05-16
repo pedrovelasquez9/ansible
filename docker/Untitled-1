@@ -1,0 +1,7 @@
+- hosts: hugo
+  become: true
+  tasks:
+    - name: Instalar python
+      package: name=python-pip state=present
+    - name: Instalar docker python 
+	  pip: name=docker-py

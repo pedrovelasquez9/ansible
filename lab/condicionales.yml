@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+    - name: verificar si existe
+      file:
+        path: /home/vagrant/prueba.txt
+        state: touch

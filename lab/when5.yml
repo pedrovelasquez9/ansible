@@ -1,0 +1,5 @@
+- hosts: all
+  tasks:
+  - debug:
+      msg: "Estas trabajando en ubuntu"
+    when: ansible_distribution == "Ubuntu" and ansible_distribution_version == "16.04"

@@ -1,0 +1,13 @@
+- name: Instalar de apache
+  package: name=apache2 state=latest
+  notify:
+    - start apache
+- name: eliminar index original
+  file:
+    state: absent
+    path: /var/www/html/index.html
+  register: html_old
+  ignore_errors: true
+- name: upload index
+  copy: src=../files/index.html dest=/var/www/html mode=0644
+  when: html_old is success

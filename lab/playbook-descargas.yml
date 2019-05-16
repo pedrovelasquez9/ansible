@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+     - name: Crea directorio descargas
+       file: path=/tmp/descargas state=directory mode=0755
+
+     - name: Descarga Logo
+       get_url: url=https://docs.ansible.com/ansible/latest/_static/images/logo_invert.png dest=/tmp/descargas/logo_mini.png

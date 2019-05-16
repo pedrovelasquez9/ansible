@@ -1,0 +1,7 @@
+- hosts: all
+  vars:
+    test: 6
+  tasks:
+  - debug:
+      msg: "Ejemplo de and"
+    when: test%2==0 and test%3==0

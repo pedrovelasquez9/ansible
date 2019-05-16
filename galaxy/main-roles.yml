@@ -1,0 +1,9 @@
+- hosts: hugo
+  become: true
+  roles:
+  - geerlingguy.apache
+  - geerlingguy.php
+  - geerlingguy.nodejs
+  - geerlingguy.java
+  - geerlingguy.composer
+  - geerlingguy.docker

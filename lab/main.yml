@@ -1,0 +1,8 @@
+- hosts: all
+  gather_facts: yes
+  tasks:
+    - command: id
+      notify: restart test
+  handlers:
+    - name: restart test
+      import_tasks: restart_test.yml

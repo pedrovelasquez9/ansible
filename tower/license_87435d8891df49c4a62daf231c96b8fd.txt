@@ -1,0 +1,11 @@
+{
+    "company_name": "IT", 
+    "contact_email": "pjpv9011@gmail.com", 
+    "contact_name": "Pedro Plasencia", 
+    "hostname": "87435d8891df49c4a62daf231c96b8fd", 
+    "instance_count": 10, 
+    "license_date": 2125412299, 
+    "license_key": "4e4292440bd68b0dc820f9da58670f8f8ae6babb8811c1c2688ab93aefd10cc1", 
+    "license_type": "basic", 
+    "subscription_name": "Red Hat Ansible Tower, Self-Support (10 Managed Nodes)"
+}

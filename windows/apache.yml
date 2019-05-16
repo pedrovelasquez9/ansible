@@ -1,0 +1,37 @@
+---
+- name: Instalar Apache desde un MSI 
+  hosts: windows
+ 
+  tasks:
+    - name: instalar git con el choco
+      win_chocolatey:
+        name: '{{ item }}'
+        state: present
+      with_items:
+        - git
+        - putty
+    - name: Crear directorio
+      win_file:
+        path: 'C:\Users\vagrant\Downloads\aslkjdasdkj\'
+        state: directory
+    - name: Descargar instalador
+      win_get_url:
+        url: 'https://www.hass.de/files/nodes/story/45/npp.7.5.5.installer.x64.msi'
+        dest: 'C:\Users\vagrant\Downloads\aslkjdasdkj\npp.7.5.5.installer.x64.msi'
+
+    - name: Instalar MSI
+      win_package: 
+        path: 'C:\Users\vagrant\Downloads\npp.7.5.5.installer.x64.msi'
+        state: present
+    - name: cambiar owner de archivos o directorios
+      win_owner:
+        path: C:\Program Files (x86)\Apache Software Foundation
+        user: Administrator
+        recurse: yes
+#    - win_updates:
+#      state: searched
+#      register: resultado
+#      log_path: C:\ansible_update_log.txt
+#    - win_reboot:
+#      when: resultado.found_update_count
+      

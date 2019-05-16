@@ -1,0 +1,4 @@
+- name: Aquí ponemos los spoilers en los hosts 
+  copy: 
+    content="{{spoiler_text}}"
+    dest=/tmp/spoiler_text.txt
